@@ -1,0 +1,22 @@
+
+            body{
+                background-color: #69D1C5;
+                font-family: Arial, Helvetica, sans-serif;
+                text-align: center;
+            }
+            h1{
+                font-family: 'Poiret One', cursive;
+                color: #630000;
+                font-size: 64px;
+            }
+            a{
+                color: #630000;
+                text-decoration: none;
+            }
+            a:hover{
+                color: #4C061D;
+                text-decoration: underline;
+            }
+            ul{
+                list-style: none;
+            }

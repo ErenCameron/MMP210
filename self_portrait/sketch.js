@@ -1,4 +1,7 @@
-<function foo(argument) {
-	console.log("banana")
+function sandwich(fruit)	{
+	console.log(" I want a " + fruit + " sandwich ")
 }
-foo();
+
+sandwich("apple");
+sandwich("banana");
+sandwich();

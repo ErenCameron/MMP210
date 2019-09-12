@@ -1,7 +1,16 @@
-function sandwich(fruit)	{
-	console.log(" I want a " + fruit + " sandwich ")
+function setup() {
+	createCanvas(640, 360);
 }
 
-sandwich("apple");
-sandwich("banana");
-sandwich();
+
+function draw() {
+	background(0);
+	ellipse(320, 180, 100);
+	
+	fill("LAVENDER");
+	rect(100,100,100,100);
+	arc(400,100,100,100,1,5.5);
+
+}
+
+// this is a comment

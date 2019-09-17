@@ -1,3 +1,5 @@
+// with variables 9/17
+
 function setup() {
 	createCanvas(500, 500);
 }

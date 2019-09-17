@@ -2,30 +2,80 @@ function setup() {
 	createCanvas(500, 500);
 }
 
-//face is drawn clockwise from top midpoint of head
 function draw() {
 	background(255);
 
-	fill(255,255,100)
+	fill(255,175,100)
     stroke(0)
-
-	line(250,30,340,40) //1
-	line(340,40,400,70) //2
-	line(400,70,400,130) //3
-	beginShape(TRIANGLE_STRIP); //right ear "4" clockwise from left most point on ear
-	vertex(380,180); 
-	vertex(400,130);
-	vertex(420,100);
-	vertex(450,120);
-	vertex(450,150);
-	vertex(400,220);
-	vertex(420,170);
+ //    beginShape(QUAD_STRIP);  //face commenting out for now may look to reintegrate
+	// vertex(250,30) 
+ //    vertex(340,40)
+	// vertex(400,70) 
+	// vertex(400,130) 
+ //    vertex(400,220) 
+ //    vertex(400,350) 
+ //    vertex(325,380) 
+ //    vertex(175,380) 
+ //    vertex(100,350) 
+ //    vertex(100,130) 
+ //    vertex(100,70) 
+ //    vertex(160,40)
+ //    vertex(250,30) 
+ //    endShape(CLOSE);
+    beginShape(QUADS);  //face 2
+    vertex(250,30) 
+    vertex(340,40)
+    vertex(400,70) 
+    vertex(400,130) 
+    vertex(400,220) 
+    vertex(400,350) 
+    vertex(325,380) 
+    vertex(175,380) 
+    vertex(100,350) 
+    vertex(100,130) 
+    vertex(100,70) 
+    vertex(160,40)
+    vertex(250,30) 
     endShape(CLOSE);
-    line(400,220,400,350) //5
-    line(400,350,325,380) //6
-    line(325,380,175,380) //7 this is the bottom line of the face
-    line(175,380,100,350) //8
-    line(100,350,100,220) //9
+
+    fill(119,170,54);
+
+    beginShape(QUADS);
+    vertex(200,80)  //beginning of left eye
+    vertex(220,100) 
+    vertex(220,120) 
+    vertex(200,140) 
+    vertex(180,140) 
+    vertex(160,120) 
+    vertex(160,100) 
+    vertex(180,80)
+    vertex(200,80) 
+    endShape(CLOSE); // end of left 
+
+    fill(0,255,255)
+
+    beginShape();
+    vertex(320,80) //22 beginning of right eye
+    vertex(340,100) 
+    vertex(340,120) 
+    vertex(320,140) 
+    vertex(300,140) 
+    vertex(280,120) 
+    vertex(280,100) 
+    vertex(300,80)
+    vertex(320,80) //28 end of right eye
+    endShape(CLOSE);
+fill   (255,255,100);
+
+    beginShape(TRIANGLE_STRIP); //right ear "4" clockwise from left most point on ear
+    vertex(380,180); 
+    vertex(400,130);
+    vertex(420,100);
+    vertex(450,120);
+    vertex(450,150);
+    vertex(400,220);
+    vertex(420,170);
+    endShape(CLOSE);
     beginShape(TRIANGLE_STRIP); // left ear "10" clockwise from lowest point on ear
     vertex(100,220);
     vertex(50,150);
@@ -35,30 +85,11 @@ function draw() {
     vertex(130,180);
     vertex(100,200);
     endShape(CLOSE);
-    line(100,130,100,70) //11
-    line(100,70,160,40) //12
-    line(160,40,250,30) //13 end of face back at mid point
-    line(200,80,220,100) //14 beginning of left eye
-    line(220,100,220,120) //15
-    line(220,120,200,140) //16
-    line(200,140,180,140) //17
-    line(180,140,160,120) //18
-    line(160,120,160,100) //19
-    line(160,100,180,80) //20
-    line(180,80,200,80) //21 end of left eye
-    line(320,80,340,100) //22 beginning of right eye
-    line(340,100,340,120) //23
-    line(340,120,320,140) //24
-    line(320,140,300,140) //24
-    line(300,140,280,120) //25
-    line(280,120,280,100) //26
-    line(280,100,300,80) //27
-    line(300,80,320,80) //28 end of right eye
-
+    
     stroke(0)
-    fill(50,205,50)
+    fill(150,20,50)
 
-    beginShape(TRIANGLE_FAN) // nose
+    beginShape(QUAD_STRIP) // nose
     vertex(250,170);
     vertex(270,200);
     vertex(250,230);

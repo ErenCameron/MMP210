@@ -62,15 +62,15 @@ function draw() {
     fill(x-250,x+5,x+5)
 
     beginShape();
-    vertex(320,80) //22 beginning of right eye
-    vertex(340,100) 
-    vertex(340,120) 
-    vertex(320,140) 
-    vertex(300,140) 
-    vertex(280,120) 
-    vertex(280,100) 
-    vertex(300,80)
-    vertex(320,80) //28 end of right eye
+    vertex(x+70,y+50) //22 beginning of right eye
+    vertex(x+90,y+70) 
+    vertex(x+90,y+90) 
+    vertex(x+70,y+110) 
+    vertex(x+50,y+110) 
+    vertex(x+30,y+90) 
+    vertex(x+30,y+70) 
+    vertex(x+50,y+50)
+    vertex(x+70,y+50) //28 end of right eye
     endShape(CLOSE);
 fill   (x+5,x+5,x-150);
 

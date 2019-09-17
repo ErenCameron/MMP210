@@ -75,22 +75,22 @@ function draw() {
 fill   (x+5,x+5,x-150);
 
     beginShape(TRIANGLE_STRIP); //right ear "4" clockwise from left most point on ear
-    vertex(380,180); 
-    vertex(400,130);
-    vertex(420,100);
-    vertex(450,120);
-    vertex(450,150);
-    vertex(400,220);
-    vertex(420,170);
+    vertex(x+130,y+150); 
+    vertex(x+150,y+100);
+    vertex(x+170,y+70);
+    vertex(x+200,y+90);
+    vertex(x+200,y+120);
+    vertex(x+150,y+190);
+    vertex(x+170,y+140);
     endShape(CLOSE);
     beginShape(TRIANGLE_STRIP); // left ear "10" clockwise from lowest point on ear
-    vertex(100,220);
-    vertex(50,150);
-    vertex(50,120);
-    vertex(70,100);
-    vertex(100,120);
-    vertex(130,180);
-    vertex(100,200);
+    vertex(x-150,y+190);
+    vertex(x-200,y+120);
+    vertex(x-200,y+90);
+    vertex(x-180,y+70);
+    vertex(x-150,y+90);
+    vertex(x-120,y+150);
+    vertex(x-150,y+170);
     endShape(CLOSE);
     
     stroke(0)

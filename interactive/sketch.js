@@ -3,8 +3,8 @@
 
 var mouthSize = 70; //mouth size
 var x = 250; //x position
-var y= 30;   //y position
-var colorChange= 250; //rgb values
+var y = 30;   //y position
+var colorChange = 250; //rgb values
 
 function setup() {
 	createCanvas(500, 500);
@@ -13,6 +13,11 @@ function setup() {
 function draw() {
 	background(255);
 
+    var x = 250 + sin(frameCount/10)* 50;
+	var y = 50 + cos(frameCount/10) * 50;
+	colorChange = 200+ sin(frameCount/5) * 100;
+	mouthSize = 1/tan(frameCount/20) * 50;
+	
 	fill(colorChange+5,colorChange-75,colorChange-150)
     stroke(0)
  //    beginShape(QUAD_STRIP);  //face commenting out for now may look to reintegrate
@@ -99,11 +104,11 @@ function draw() {
     fill(colorChange-100,colorChange-230,colorChange+150)
 
     beginShape(QUAD_STRIP) // nose
-    vertex(250,y+140);
-    vertex(270,y+170);
-    vertex(250,y+200);
-    vertex(230,y+170);
-    vertex(250,y+140);
+    vertex(x,y+140);
+    vertex(x+20,y+170);
+    vertex(x,y+200);
+    vertex(x-20,y+170);
+    vertex(x,y+140);
     endShape(CLOSE); // end nose
 
     fill(colorChange-250,colorChange-250,colorChange+5)

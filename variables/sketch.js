@@ -1,9 +1,10 @@
 // with variables 9/17
 
 
-var mouthSize = 70;
-var x = 250;
-var y= 30;
+var mouthSize = 70; //mouth size
+var x = 250; //x position
+var y= 30;   //y position
+var colorChange= 250; //rgb values
 
 function setup() {
 	createCanvas(500, 500);
@@ -12,7 +13,7 @@ function setup() {
 function draw() {
 	background(255);
 
-	fill(x+5,x-75,x-150)
+	fill(colorChange+5,colorChange-75,colorChange-150)
     stroke(0)
  //    beginShape(QUAD_STRIP);  //face commenting out for now may look to reintegrate
 	// vertex(250,30) 
@@ -45,7 +46,7 @@ function draw() {
     vertex(x,y) 
     endShape(CLOSE);
 
-    fill(x-131,x-80,x-196);
+    fill(colorChange-131,colorChange-80,colorChange-196);
 
     beginShape(QUADS);
     vertex(x-50,y+50)  //beginning of left eye
@@ -59,7 +60,7 @@ function draw() {
     vertex(x-50,y+50) 
     endShape(CLOSE); // end of left 
 
-    fill(x-250,x+5,x+5)
+    fill(colorChange-250,colorChange+5,colorChange+5)
 
     beginShape();
     vertex(x+70,y+50) //22 beginning of right eye
@@ -72,7 +73,8 @@ function draw() {
     vertex(x+50,y+50)
     vertex(x+70,y+50) //28 end of right eye
     endShape(CLOSE);
-fill   (x+5,x+5,x-150);
+	
+    fill(colorChange+5,colorChange+5,colorChange-150);
 
     beginShape(TRIANGLE_STRIP); //right ear "4" clockwise from left most point on ear
     vertex(x+130,y+150); 
@@ -94,7 +96,7 @@ fill   (x+5,x+5,x-150);
     endShape(CLOSE);
     
     stroke(0)
-    fill(x-100,y-10,x+150)
+    fill(colorChange-100,colorChange-230,colorChange+150)
 
     beginShape(QUAD_STRIP) // nose
     vertex(250,y+140);
@@ -104,7 +106,7 @@ fill   (x+5,x+5,x-150);
     vertex(250,y+140);
     endShape(CLOSE); // end nose
 
-    fill(x-250,x-250,x+5)
+    fill(colorChange-250,colorChange-250,colorChange+5)
 
     circle(250,280,mouthSize); //mouth
    

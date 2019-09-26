@@ -121,6 +121,16 @@ if (mouseIsPressed) {
     } else  {
     circle(250,280,70); //mouth
     }
+if (keyIsPressed && keyCode === 83) {
+    r = 200+ sin(frameCount/5) * 100;
+    g = 200+ sin(frameCount/5) * 100;
+    b = 200+ sin(frameCount/5) * 100;
+    
+}    else {
+    r = 250;
+    g = 250;
+    b = 250;
+}
    
 }
 

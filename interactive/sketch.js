@@ -13,10 +13,10 @@ function setup() {
 function draw() {
 	background(255);
 
-    var x = 250 + sin(frameCount/10)* 50;
-	var y = 50 + cos(frameCount/10) * 50;
-	colorChange = 200+ sin(frameCount/5) * 100;
-	mouthSize = 1/tan(frameCount/20) * 50;
+    var x = 250 + sin(frameCount/10)* 50;  //face animation about the x axis
+	var y = 50 + cos(frameCount/10) * 50;  //face animation about the y axis
+	colorChange = 200+ sin(frameCount/5) * 100; //color shifting
+	mouthSize = 1/tan(frameCount/20) * 50;  //mouth animation
 	
 	fill(colorChange+5,colorChange-75,colorChange-150)
     stroke(0)

@@ -4,8 +4,9 @@
 var mouthSize = 70; //mouth size
 var x = 250; //x position
 var y = 30;   //y position
-var colorChange = 250; //rgb values
-
+var r = 250; // red
+var g = 250; // green
+var b = 250; // blue
 function setup() {
 	createCanvas(500, 500);
 }
@@ -13,12 +14,13 @@ function setup() {
 function draw() {
 	background(255);
 
-    var x = 250 + sin(frameCount/10)* 50;  //face animation about the x axis
-	var y = 50 + cos(frameCount/10) * 50;  //face animation about the y axis
-	colorChange = 200+ sin(frameCount/5) * 100; //color shifting
-	mouthSize = 1/tan(frameCount/20) * 50;  //mouth animation
+//    var x = 250 + sin(frameCount/10)* 50;  //face animation about the x axis
+//	var y = 50 + cos(frameCount/10) * 50;  //face animation about the y axis
+//	r = 200+ sin(frameCount/5) * 100; //color shifting
+//    g = 200+ sin(frameCount/5) * 100; //color shifting
+//	mouthSize = 1/tan(frameCount/20) * 50;  //mouth animation
 	
-	fill(colorChange+5,colorChange-75,colorChange-150)
+	fill(r+5,g-75,b-150)
     stroke(0)
  //    beginShape(QUAD_STRIP);  //face commenting out for now may look to reintegrate
 	// vertex(250,30) 
@@ -51,7 +53,7 @@ function draw() {
     vertex(x,y) 
     endShape(CLOSE);
 
-    fill(colorChange-131,colorChange-80,colorChange-196);
+    fill(r-131,g-80,b-196);
 
     beginShape(QUADS);
     vertex(x-50,y+50)  //beginning of left eye
@@ -65,7 +67,7 @@ function draw() {
     vertex(x-50,y+50) 
     endShape(CLOSE); // end of left 
 
-    fill(colorChange-250,colorChange+5,colorChange+5)
+    fill(r-250,g+5,b+5)
 
     beginShape();
     vertex(x+70,y+50) //22 beginning of right eye
@@ -79,9 +81,9 @@ function draw() {
     vertex(x+70,y+50) //28 end of right eye
     endShape(CLOSE);
 	
-    fill(colorChange+5,colorChange+5,colorChange-150);
+    fill(r+5,g+5,b-150);
 
-    beginShape(TRIANGLE_STRIP); //right ear "4" clockwise from left most point on ear
+    beginShape(TRIANGLE_STRIP); //right ear begins clockwise from left most point on ear
     vertex(x+130,y+150); 
     vertex(x+150,y+100);
     vertex(x+170,y+70);
@@ -90,7 +92,7 @@ function draw() {
     vertex(x+150,y+190);
     vertex(x+170,y+140);
     endShape(CLOSE);
-    beginShape(TRIANGLE_STRIP); // left ear "10" clockwise from lowest point on ear
+    beginShape(TRIANGLE_STRIP); // left ear begins clockwise from lowest point on ear
     vertex(x-150,y+190);
     vertex(x-200,y+120);
     vertex(x-200,y+90);
@@ -101,7 +103,7 @@ function draw() {
     endShape(CLOSE);
     
     stroke(0)
-    fill(colorChange-100,colorChange-230,colorChange+150)
+    fill(r-100,g-230,b+150)
 
     beginShape(QUAD_STRIP) // nose
     vertex(x,y+140);
@@ -111,9 +113,14 @@ function draw() {
     vertex(x,y+140);
     endShape(CLOSE); // end nose
 
-    fill(colorChange-250,colorChange-250,colorChange+5)
+    fill(r-250,g-250,b+5)
 
+if (mouseIsPressed) {
+    mouthSize = 1/tan(frameCount/20) * 50;
     circle(250,280,mouthSize); //mouth
+    } else  {
+    circle(250,280,70); //mouth
+    }
    
 }
 

@@ -23,22 +23,22 @@ function draw() {
     
     
     if (mouseX < width/2 && mouseY < height/2) {
-         text(str5, width/4, 100, 75 , 75);
+         text(str5, width/4, 100, 75 , 75) && fill("red");
     } else { 
         rect (50,50, 180,180);
     }
     if (mouseX > width/2 && mouseY < height/2) {
-    text(str6, width/2 + width/6, 100, 75, 75);
+    text(str6, width/2 + width/6, 100, 75, 75) && fill("blue");
     } else {
         rect (270,50, 180,180);
     }
     if (mouseX < width/2 && mouseY > height/2) {
-    text(str7, width/4, 350, 75 , 75);
+    text(str7, width/4, 350, 75 , 75) && fill("purple");
     } else {
         rect (50, 270, 180,180);
     }
      if (mouseX > width/2 && mouseY > height/2) {
-    text(str8, width/2 + width/6, 350, 75, 75);
+    text(str8, width/2 + width/6, 350, 75, 75) && fill("orange");
      } else {
         rect (270,270, 180,180);
     }

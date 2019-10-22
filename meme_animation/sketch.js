@@ -9,8 +9,17 @@ var wordPositionY = 200; //y position of text
 function draw() {
     
 	background(255);
-    textSize (wordSize);
-    text ("okay boomer", wordPosition, wordPositionY); 
+    
+
+    if (keyIsPressed) {
+    push();
+    translate(250,250);
+    rotate( radians(frameCount) );
+    wordPosition = -100;
+    wordPositionY = -100;    
+        }
+    text ("ok boomer", wordPosition, 200); 
+    textSize (wordSize); 
     wordPosition += wordSpeed;
     if (wordPosition > width || wordPosition <-300) { //moves text from right to left 
         wordSpeed *= -1;
@@ -22,7 +31,9 @@ function draw() {
             wordSize = 0;
         }
     }
-
+    if (mouseIsPressed) {
+        rotate(frameCount * PI / 50);
+    }
 }
 
 	

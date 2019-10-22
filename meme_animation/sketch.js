@@ -9,15 +9,12 @@ function setup() {
 var wordPosition = 100; //x position of the text
 var wordSpeed = 10; //direction and speed of text
 var wordSize = 50; //size of text
-var wordPositionY = 200; //y position of text
-
+var imageScale = 1; //image scale
 function draw() {
     
 	background(255);
-    image(boomer, 150,150,200,200);
-
+	image(boomer, 125, 125, 250, 250);
     if (keyIsPressed) {
-    push();
     translate(250,250);
     rotate( radians(frameCount) );
     wordPosition = -100;
@@ -39,6 +36,7 @@ function draw() {
     if (mouseIsPressed) {
         rotate(frameCount * PI / 50);
     }
+	
 }
 
 	

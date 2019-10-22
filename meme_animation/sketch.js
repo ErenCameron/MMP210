@@ -1,3 +1,8 @@
+var boomer;
+function preload (){
+    boomer = loadImage("images.jpeg")
+}
+
 function setup() {
 	createCanvas(500, 500);
 }
@@ -9,7 +14,7 @@ var wordPositionY = 200; //y position of text
 function draw() {
     
 	background(255);
-    
+    image(boomer, 150,150,200,200);
 
     if (keyIsPressed) {
     push();

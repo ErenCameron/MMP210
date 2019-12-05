@@ -11,8 +11,8 @@ var prevBtnY = 500;
 var prevBtnW = 100;
 var prevBtnH = 50;
 
-var first; 
-var second;
+var first; //image one
+var second; //image two
 
 function preload() {
     first = loadImage("1.jpg"); //put image here
@@ -34,7 +34,7 @@ function draw() {
         textAlign(CENTER, CENTER);
         text("Music? Colors? Yes!", width/2, height/2);
         textSize(30);
-        text("Xxx_P34chy_Shr00m_xxX & 420_b00ty_w1z4rd", width/2, height/2 + 50);
+        text("Amanita Funaro & Eren Cameron", width/2, height/2 + 50);
         
     } else if (slideNumber == 1) {
         // content for slide number 1
@@ -43,9 +43,10 @@ function draw() {
      	if (mouseIsPressed) {
         image(second, 0, 0, width, height);
 		} else {
-		image(first, 0, 0, width, height);	
+		image(first, 0, 0, width, height);
+            
 		}
-        
+       
        
     } else if (slideNumber == 2) {
         
@@ -53,6 +54,13 @@ function draw() {
       fill(255);
 		textSize(100);
         text("Yes!", width/2, height/2 - 50);
+        textSize(30);
+        text("playback rate!", width/2, height/2 +50);
+        text("filter!", width/2, height/2 + 150);
+        text("pan!", width/2, height/2 - 100);
+        text("visualizer!", width/2, height/2 - 200);
+        text("shapes!", width/2, height/2 - 300);
+        text("colors!", width/2, height/2 + 250);
     }
     
     

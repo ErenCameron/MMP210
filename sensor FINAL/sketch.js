@@ -7,15 +7,12 @@ var serial;
 var serialAvailable;
 var portName = "COM17"; //needs to change based on p5 serial port app
 var xaxis, yaxis;
-
 function preload() {
     electro = loadSound('electro.wav');
 }
 function setup() {
-	createCanvas(1920, 1080);
+	createCanvas(1000, 1000);
     filter = new p5.LowPass();
-    
-    
     electro.disconnect();
     electro.connect(filter);
     fft = new p5.FFT();
@@ -74,7 +71,6 @@ function draw() {
 	filterFreq = map(mouseX, 0, width, 10, 22050);
     filterRes = map(mouseY, 0, height, 15, 5);
     filter.set(filterFreq, filterRes);
-    
     var spectrum = fft.analyze();    
     fill (0);
     noStroke();
@@ -83,7 +79,9 @@ function draw() {
         let h = -height + map(spectrum[i], 0, 255, height, 0);
         rect(x, height, width / spectrum.length, h);
     }
-        
+    var pan = map(mouseX, 0, width, -1, 1);
+	pan = constrain(pan, -1, 1);
+	electro.pan(pan);
     ellipse(300, 300, mouseX, mouseY);
     if (mouseIsPressed) {
         electro.play();

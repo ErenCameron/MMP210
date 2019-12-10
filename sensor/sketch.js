@@ -1,5 +1,6 @@
 var serial;
-var portName = "COM17";
+var serialAvailable;
+var portName = "COM17"; //needs to change based on p5 serial port app
 var xaxis, yaxis;
 
 function setup() {
@@ -20,12 +21,15 @@ function serverConnected() {
 }
 function portOpen(){
 	console.log('the serial port opened');
+    serialAvailable = true;
 }
 function portClose(){
 	console.log('the serial port closed');
+    serialAvailable = false;
 }
 function serialError(){
 	console.log('error');
+    serialAvailable = false;
 }
 function serialEvent(){
 	var currentString = serial.readLine();
@@ -41,6 +45,7 @@ function serialEvent(){
 function draw() {
 	var xRect = map(xaxis, 0, 1023, 0, 255);
 	var yRect = map(yaxis, 0, 1023, 0, 255);
+    if (serialAvailable) {
 	background(xRect, yRect, 60);
     fill('white');
 	ellipse(xRect, yRect, xRect+100, yRect+100);
@@ -48,7 +53,16 @@ function draw() {
 	ellipse(xRect - 100, yRect + 100, 100, 100);
 	ellipse(xRect + 100, yRect - 100, 100, 100);
     ellipse(300, 300, xRect, yRect);
+	}
+    else { 
+	background(mouseX, mouseY, 60);
+    fill('white');
 	
+    ellipse(300, 300, mouseX, mouseY);
+        
+        
+        
+    }
 	
 }
 

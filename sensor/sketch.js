@@ -1,7 +1,7 @@
 var serial;
 var serialAvailable;
 var portName = "COM17"; //needs to change based on p5 serial port app
-var xaxis, yaxis;
+var xaxis, yaxis, zaxis, buttonState;
 
 function setup() {
 	createCanvas(500, 500);
@@ -41,6 +41,9 @@ function serialEvent(){
     
 	xaxis = currentString.split(',')[0]; 
 	yaxis = currentString.split(',')[1];
+	zaxis = currentString.split(',')[2];
+	buttonState = currentString.split(',')[3];
+	
 }
 function draw() {
 	var xRect = map(xaxis, 0, 1023, 0, 255);

@@ -56,7 +56,7 @@ function serialEvent(){
 	buttonState = currentString.split(',')[3];
 }
 function draw() {
-    if (serialAvailable) {
+//    if (serialAvailable) {
 	background("#00DBC4");
     fill("white");
     circle(200, 150, 250);
@@ -106,10 +106,10 @@ function draw() {
 		electro.rate(speed);
 		
 //    ellipse(300, 300, mouseX, mouseY);
-    if (mouseIsPressed) {
-        electro.play();
+    if (buttonState = 1) {
+        electro.loop();
     }
-		
+	}
 //	}else { 
 //	background(mouseX, mouseY, 60);
 //    fill('white');

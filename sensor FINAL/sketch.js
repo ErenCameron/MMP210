@@ -11,7 +11,7 @@ function preload() {
     electro = loadSound('electro.wav');
 }
 function setup() {
-	createCanvas(1000, 1000);
+	createCanvas(1920, 1080);
     filter = new p5.LowPass();
     electro.disconnect();
     electro.connect(filter);
@@ -100,42 +100,42 @@ function draw() {
     var pan = map(yaxis, 0, width, -1, 1);
 	pan = constrain(pan, -1, 1);
 	electro.pan(pan);
-		
-	var speed = map(zaxis. 0.1, height, 0, 2);
+	
+	var speed = map(zaxis, 0.1, height, 0, 2);
 		speed =constrain(speed, 0.01, 4);
 		electro.rate(speed);
 		
-    ellipse(300, 300, mouseX, mouseY);
+//    ellipse(300, 300, mouseX, mouseY);
     if (mouseIsPressed) {
         electro.play();
     }
 		
-	}else { 
-	background(mouseX, mouseY, 60);
-    fill('white');
-	filterFreq = map(mouseX, 0, width, 10, 22050);
-    filterRes = map(mouseY, 0, height, 15, 5);
-    filter.set(filterFreq, filterRes);
-    var spectrum = fft.analyze();    
-    fill (0);
-    noStroke();
-    for (let i = 0; i < spectrum.length; i++) {
-        let x = map(i, 0, spectrum.length, 0, width);
-        let h = -height + map(spectrum[i], 0, 255, height, 0);
-        rect(x, height, width / spectrum.length, h);
-    }
-    var pan = map(mouseX, 0, width, -1, 1);
-	pan = constrain(pan, -1, 1);
-	electro.pan(pan);
-		
-
-    ellipse(300, 300, mouseX, mouseY);
-    if (mouseIsPressed) {
-        electro.play();
-    }
-    
-    }
-
-}
+//	}else { 
+//	background(mouseX, mouseY, 60);
+//    fill('white');
+//	filterFreq = map(mouseX, 0, width, 10, 22050);
+//    filterRes = map(mouseY, 0, height, 15, 5);
+//    filter.set(filterFreq, filterRes);
+//    var spectrum = fft.analyze();    
+//    fill (0);
+//    noStroke();
+//    for (let i = 0; i < spectrum.length; i++) {
+//        let x = map(i, 0, spectrum.length, 0, width);
+//        let h = -height + map(spectrum[i], 0, 255, height, 0);
+//        rect(x, height, width / spectrum.length, h);
+//    }
+//    var pan = map(mouseX, 0, width, -1, 1);
+//	pan = constrain(pan, -1, 1);
+//	electro.pan(pan);
+//		
+//
+//    ellipse(300, 300, mouseX, mouseY);
+//    if (mouseIsPressed) {
+//        electro.play();
+//    }
+//    
+//    }
+//
+//}
 
 // this is a comment

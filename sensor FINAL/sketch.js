@@ -5,8 +5,8 @@ var filterFreq;
 var filterRes;
 var serial;
 var serialAvailable;
-var portName = "COM17"; //needs to change based on p5 serial port app
-var xaxis, yaxis, zaxis, buttonState;
+var portName = "COM4"; //needs to change based on p5 serial port app
+var xaxis = 0, yaxis = 0, zaxis = 0, buttonState;
 function preload() {
     electro = loadSound('electro.wav');
 }
@@ -86,6 +86,7 @@ function draw() {
     triangle(1200, 400, 1100, 700, 1000, 500);
     triangle(900, 900, 1000, 1000, 600, 1080);
     triangle(1700, 200, 1500, 100, 1600, 200);
+		
 	filterFreq = map(xaxis, 0, width, 10, 22050);
     filterRes = map(mouseY, 0, height, 15, 5);
     filter.set(filterFreq, filterRes);
@@ -97,18 +98,21 @@ function draw() {
         let h = -height + map(spectrum[i], 0, 255, height, 0);
         rect(x, height, width / spectrum.length, h);
     }
-    var pan = map(yaxis, 0, width, -1, 1);
-	pan = constrain(pan, -1, 1);
-	electro.pan(pan);
+
+         var pan = map(yaxis, 0, width, -1, 1);
+         pan = constrain(pan, -1, 1);
+         electro.pan(pan);
+   
 	
-	var speed = map(zaxis, 0.1, height, 0, 2);
+    	var speed = map(zaxis, 0.1, height, 0, 2);
 		speed =constrain(speed, 0.01, 4);
 		electro.rate(speed);
-		
 //    ellipse(300, 300, mouseX, mouseY);
-    if (buttonState = 1) {
-        electro.loop();
+  
+    if (mouseIsPressed){
+        electro.play();
     }
+   
 	}
 //	}else { 
 //	background(mouseX, mouseY, 60);

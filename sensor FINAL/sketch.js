@@ -58,7 +58,8 @@ function serialEvent(){
 function draw() {
 //    if (serialAvailable) {
 	background("#00DBC4");
-    fill("white");
+    var colorone = map(xaxis, 0, 1023, 0, 255);
+    fill(colorone,135,135);   //GOOD COLOR
     circle(200, 150, 250);
     circle(550,800,160);
     circle(0, 700, 300);
@@ -67,7 +68,8 @@ function draw() {
     circle(1800, 300, 200);
     circle(1900, 1000, 400);
     circle(800, 350, 200);
-    fill("pink");
+    var colortwo = map(yaxis,0 , 1023, 0, 255);
+    fill(135,colortwo,135);
     rect(350, 380, 300, 200);
     rect(1600, 0, 300, 100);
     rect(1300, 300, 300, 100);
@@ -77,7 +79,8 @@ function draw() {
     rect(1000, 300, 100, 100);
     rect(800, 500, 100, 300);
     rect(0, 900, 300, 300);
-    fill("black");
+    var colorthree = map(zaxis, 0, 1023, 0, 255)
+    fill(colorthree,75,60);
     triangle(0, 250, 0, 450, 300, 500);
     triangle(600, 52, 400, 300, 700, 200);
     triangle(950, 52, 1000, 100, 950, 200);
@@ -91,7 +94,7 @@ function draw() {
     filterRes = map(mouseY, 0, height, 15, 5);
     filter.set(filterFreq, filterRes);
     var spectrum = fft.analyze();    
-    fill (0);
+    fill (colorone, colortwo, colorthree);
     noStroke();
     for (let i = 0; i < spectrum.length; i++) {
         let x = map(i, 0, spectrum.length, 0, width);
@@ -109,7 +112,7 @@ function draw() {
 		electro.rate(speed);
 //    ellipse(300, 300, mouseX, mouseY);
   
-    if (mouseIsPressed){
+    if (mouseIsPressed && !electro.isPlaying()){
         electro.play();
     }
    
